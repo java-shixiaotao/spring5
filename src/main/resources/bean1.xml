@@ -6,7 +6,7 @@
     <bean id="user" class="com.mouds.utils.User"></bean>
 
     <!--通过set注入属性-->
-    <bean id="book" class="com.mouds.utils.Book">
+    <bean id="book" class="com.mouds.utils.Book" scope="prototype">
         <property name="name" value="活着"></property>
         <property name="author" value="1111"></property>
     </bean>
