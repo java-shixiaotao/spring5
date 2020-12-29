@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list id="list">
+        <value>"111"</value>
+        <value>"222"</value>
+        <value>"333"</value>
+        <value>"444"</value>
+    </util:list>
+
+    <bean id="beanListDemo" class="com.mouds.beanList.BeanListDemo">
+        <property name="list" ref="list"></property>
+        <property name="map">
+            <map>
+                <entry key="value1" value="value1"></entry>
+                <entry key="value2" value="value2"></entry>
+            </map>
+        </property>
+        <property name="couresList">
+            <list>
+                <ref bean="coures1"></ref>
+                <ref bean="coures2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="coures1" class="com.mouds.beanList.Coures">
+        <property name="name" value="coures111"></property>
+    </bean>
+    <bean id="coures2" class="com.mouds.beanList.Coures">
+        <property name="name" value="coures222"></property>
+    </bean>
+</beans>

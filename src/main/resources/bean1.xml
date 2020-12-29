@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 配置user对象框-->
+    <bean id="user" class="com.mouds.utils.User"></bean>
+
+    <!--通过set注入属性-->
+    <bean id="book" class="com.mouds.utils.Book">
+        <property name="name" value="活着"></property>
+        <property name="author" value="1111"></property>
+    </bean>
+    <!--通过有参构造注入属性-->
+    <bean id="order" class="com.mouds.utils.Order"> <!--不写内部属性的原因是,在实体类中没有无参构造-->
+        <constructor-arg name="name" value="yuedu"></constructor-arg>
+        <constructor-arg name="address" value="beijing"></constructor-arg>
+        <constructor-arg name="peoP">  <!--可以说设置属性为null值-->
+            <null></null>
+        </constructor-arg>
+        <constructor-arg name="data">  <!--使用cdata写入特殊符号-->
+            <value><![CDATA[<<北京>>]]></value>
+        </constructor-arg>
+    </bean>
+
+
+</beans>
