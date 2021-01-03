@@ -59,4 +59,16 @@ public class Users {
     public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
+
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }
